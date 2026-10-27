@@ -8,6 +8,9 @@ public class Main {
             System.out.println("\nDigite 3 para multiplicar\nDigite 4 para dividir");
             resposta = Integer.parseInt(System.console().readLine());
             switch (resposta){
+                case 0:
+                    System.out.println("Encerrando a calculadora...");
+                    break;
                 case 1:
                     System.out.print("\nDigite o valor do primeiro numero: ");
                     numero1 = Double.parseDouble(System.console().readLine());
@@ -37,7 +40,11 @@ public class Main {
                     numero1 = Double.parseDouble(System.console().readLine());
                     System.out.print("Digite o valor do segundo numero: ");
                     numero2 = Double.parseDouble(System.console().readLine());
-                    System.out.printf("Resultado da divisao: %.2f",numero1 / numero2);
+                    if(numero2 == 0){
+                        System.out.println("impossivel dividir por zero");
+                    } else {
+                        System.out.printf("Resultado da divisao: %.2f",numero1 / numero2);
+                    }
                     System.out.print("\nPreparando nova operacao\n");
                     break;
                 default:
